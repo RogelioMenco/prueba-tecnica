@@ -1,5 +1,4 @@
 import { FC, useState } from "react";
-
 interface InputProps {
   onAddTask: (title: string) => void;
 }
@@ -16,21 +15,15 @@ const Input: FC<InputProps> = ({ onAddTask }) => {
       setNewTaskTitle("");
     }
   };
+
   return (
-    
-    <div className="mt-2 shadow-sm">
-      <input
-        type="text"
-        placeholder="Nuevo Contacto"
-        value={newTaskTitle}
-        onChange={handleInputChange}
-        className="borde-1px bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-      />
-      <button
-        onClick={handleAddTask} className="text-white bg-blue-700 hover:bg-blue-80">
-        Agregar
-      </button>                        
-    </div>
+    <div className="flex bg-white rounded-md text-gray-800 ">
+      <input type="text" placeholder="Nuevo Contacto" value={newTaskTitle} onChange={handleInputChange}
+       className="bg-transparent outline-none focus:outline-none focus:bg-white border-b border-gray-300 px-3 w-full gri"/>
+        <button onClick={handleAddTask} className="col-span-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+         Agregar
+        </button>                        
+    </div >
   );
 };
 

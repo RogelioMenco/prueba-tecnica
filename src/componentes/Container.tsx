@@ -1,14 +1,13 @@
 import { FC, useState } from "react";
 import Input from "./Input";
-import Task from "./Task";
-
+import Task from "./Task"; 
 interface TaskItem {
   id: number;
   title: string;
   completed: boolean;
 }
 
-const Container: FC = () => {
+ const Container: FC = () => {
   const [tasks, setTasks] = useState<TaskItem[]>([]);
 
   const addTask = (title: string) => {
@@ -25,7 +24,7 @@ const Container: FC = () => {
   };
 
   return (
-    <div>
+    <div className="max-w-96">
       <Input onAddTask={addTask}/>
       {tasks.map((task) => (
         <Task
